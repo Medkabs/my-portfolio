@@ -1,0 +1,930 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #0a0909;
+  color: #ffffff;
+  height: 35px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  z-index: 1000;
+}
+
+footer p {
+  margin: 0;
+  font-size: 12px;
+}
+
+/* Portfolio Styles */
+.portfolio,
+.projects,
+.project-display {
+  text-align: center;
+}
+
+.project-image {
+  max-width: 80%;
+  height: auto;
+  border: 2px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  font-size: 16px;
+}
+
+/* Interests Component Styles */
+.interests {
+  text-align: center;
+  padding: 20px;
+}
+
+.interest-items {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.interest {
+  padding: 10px;
+  background-color: #8c8b8b;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+  margin: 10px;
+}
+
+.interest:hover {
+  background-color: #02f10a;
+}
+
+/* Droppable Container styled as a TV screen */
+.drop-container {
+  width: 70%;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #0ae907;
+  border: 5px solid #333;
+  border-radius: 20px;
+  min-height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: linear-gradient(135deg, #444, #111);
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.8);
+}
+
+/* TV Buttons */
+.tv-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+
+.tv-button {
+  width: 30px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tv-button:hover {
+  background-color: #888;
+}
+
+.tv-button-on {
+  background-color: #4caf50;
+}
+
+.tv-button-off {
+  background-color: #f44336;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .tv-button {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .drop-container p {
+    font-size: 1rem;
+  }
+
+  .tv-button {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.content p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: hsl(0, 27%, 98%);
+}
+
+.gallery {
+  text-align: center;
+}
+
+.gallery-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  /* Adjust the gap between images */
+}
+
+.gallery-images img {
+  max-width: 200px;
+  height: 210px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(2, 241, 14, 0.1);
+  border: 5px solid rgb(3, 228, 3);
+}
+
+/* Ensure the object container (PDF viewer) is responsive */
+/* Make the PDF responsive */
+.pdf {
+  max-width: 100%;
+  height: 80vh;
+  border: none;
+  display: block;
+  margin: 0 auto;
+
+}
+
+
+@media (max-width: 768px) {
+  .pdf {
+    height: 70px;
+  }
+}
+
+
+.resume {
+  margin: 20px;
+  padding: 10px;
+}
+
+h1,
+h2 {
+  margin-bottom: 15px;
+}
+
+.image-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .biography-image {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.biography-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid hsl(126, 98%, 45%);
+
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+h1, h2, h3, p, li, a {
+  color: #fff;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+  position: relative;
+  z-index: 1000;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.navbar ul li {
+  font-size: 1.1rem;
+}
+
+.navbar ul li a {
+  color: #ffffff;
+  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.navbar ul li a:hover {
+  background-color: #444;
+}
+
+/* Fade in/out effect for the content when switching between pills */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+/* Apply the animations when content is toggled */
+.red-pill-content.fadeIn,
+.blue-pill-content.fadeIn {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.red-pill-content.fadeOut,
+.blue-pill-content.fadeOut {
+  animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+/* Glitch effect for page transition */
+@keyframes glitch {
+  0% {
+    transform: translateX(0);
+    text-shadow: 2px 0 red, -2px 0 blue;
+  }
+
+  20% {
+    transform: translateX(-5px);
+    text-shadow: 2px 0 red, -2px 0 blue;
+  }
+
+  40% {
+    transform: translateX(5px);
+    text-shadow: -2px 0 red, 2px 0 blue;
+  }
+
+  60% {
+    transform: translateX(-5px);
+    text-shadow: 2px 0 red, -2px 0 blue;
+  }
+
+  80% {
+    transform: translateX(5px);
+    text-shadow: -2px 0 red, 2px 0 blue;
+  }
+
+  100% {
+    transform: translateX(0);
+    text-shadow: 2px 0 red, -2px 0 blue;
+  }
+}
+
+/* Apply the glitch effect */
+.glitch {
+  font-family: 'Courier New', Courier, monospace;
+  position: relative;
+  display: inline-block;
+  animation: glitch 1s linear infinite;
+  color: #fff;
+}
+
+.glitch:before,
+.glitch:after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: glitch 2s linear infinite;
+  z-index: -1;
+}
+
+.glitch:before {
+  color: rgb(38, 0, 255);
+  clip: rect(24px, 9999px, 44px, 0);
+}
+
+.glitch:after {
+  color: red;
+  clip: rect(68px, 9999px, 88px, 0);
+}
+
+/* For glitch transition during page changes */
+.page-glitch {
+  animation: glitch 0.8s linear 1 forwards;
+}
+
+/* CSS for the morphing text effect */
+@keyframes thresholdAnimation {
+  0% {
+    filter: blur(0);
+    opacity: 1;
+  }
+
+  100% {
+    filter: blur(8px);
+    opacity: 0;
+  }
+}
+
+#container {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#text1,
+#text2 {
+  position: absolute;
+  font-size: 2em;
+  font-family: 'Courier New', Courier, monospace;
+  /* Set to monospace font */
+  color: #fff;
+}
+
+/* Tunnel effects for the background */
+.red-tunnel,
+.blue-tunnel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  animation: tunnelEffect 5s infinite;
+}
+
+.red-tunnel {
+  background: radial-gradient(circle, rgba(255, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+}
+
+.blue-tunnel {
+  background: radial-gradient(circle, rgba(0, 0, 255, 0.6), rgba(0, 0, 0, 0.6));
+}
+
+/* Tunnel effect animation */
+@keyframes tunnelEffect {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scale(1.5);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}
+
+/* Content Containers */
+.container,
+.biography {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.portfolio {
+  max-width: 90%;
+  margin: auto;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.portfolio h1 {
+  text-align: left;
+}
+
+
+/* Typing effect animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+/* Blinking caret effect */
+@keyframes blinkCaret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.home {
+  max-width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  /* Include padding in width calculation */
+  margin: -1px;
+
+}
+
+.home h1,
+.home p {
+  overflow: hidden;
+  /* Ensures text is hidden initially */
+  border-right: 3px solid #fff;
+  /* Simulates the typing caret */
+  display: inline-block;
+  /* Ensures the effect applies to the text only */
+  white-space: nowrap;
+  /* Prevents text from wrapping initially */
+  width: 0;
+  /* Initially hidden */
+  animation: blinkCaret 0.75s step-end infinite;
+
+}
+
+.home h1 {
+
+  text-align: center;
+  font-size: 2.5rem;
+  animation: typing 4s steps(30, end) 1s forwards, blinkCaret 0.75s step-end infinite;
+}
+
+.home p {
+  font-size: 1rem;
+  animation: typing 6s steps(40, end) 5s forwards, blinkCaret 0.75s step-end infinite;
+
+  display: inline-block;
+  max-width: 90vw;
+  /* Adjusts width to fit within the viewport */
+  text-align: center;
+  white-space: nowrap;
+  word-wrap: break-word;
+  /* Breaks long words if needed */
+  word-break: normal;
+  width: 0;
+  overflow: hidden;
+  height: 100px;
+
+}
+
+.biography {
+  max-width: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+  /* Include padding in width calculation */
+}
+
+.biography h1 {
+  text-align: center;
+}
+
+/* Paragraph inside the biography section */
+.biography p {
+  padding: 0.01rem;
+  animation: typing 1s steps(30, end) forwards, blinkCaret 0.75s step-end infinite;
+  width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  box-sizing: border-box;
+  text-align: center;
+  color: #f8fbf8;
+  font-weight: bold;
+  box-shadow: 0 0 15px lime;
+}
+
+/* Typing effect animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+/* Blinking caret effect */
+@keyframes blinkCaret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Apply typing animation to each line */
+.typing-line {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 1px solid #fff;
+  width: 0;
+  animation: typing 2s steps(30, end) forwards, blinkCaret 0.75s step-end infinite;
+}
+
+/*Styling resume h2*/
+
+/*Create a container for the buttons */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 100px;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+ 
+}
+
+/* Styling for the red pill button */
+.red-pill {
+  background-color: hwb(6 0% 2%);
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  box-shadow: 0 0 15px #e90808;
+  cursor: grabbing;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Courier New', Courier, monospace;
+  position: relative;
+  width: auto;
+  height: auto;
+
+}
+
+/* Styling for the blue pill button */
+.blue-pill {
+
+  background-color: rgba(0, 0, 255, 0.6);
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  box-shadow: 0 0 15px blue;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Courier New', Courier, monospace;
+  position: relative;
+  width: auto;
+  height: auto;
+  position: -webkit-sticky;
+}
+
+.pill-button {
+  display: flex;
+  border: none;
+  margin: auto auto 30px auto;
+  font-size: 1.2rem;
+  padding: 15px 0;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 200px;
+  border-radius: 30px;
+
+}
+
+/* Hover effects for both buttons */
+.pill-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1030px) {
+  .button-container {
+    gap: 15px;
+    
+  }
+
+  .pill-button {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .button-container {
+    flex-direction: column;
+    gap: 15px;
+
+  }
+
+  .pill-button {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .button-container {
+    flex-direction: column;
+    gap: 10px;
+    
+  }
+
+  .pill-button {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+}
+
+/* Hover effects */
+.pill-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px lime;
+}
+
+/* Content that appears after clicking */
+.red-pill-content,
+.blue-pill-content {
+  margin-top: 20px;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  text-align: center;
+  position: relative;
+}
+
+.red-pill-content.show,
+.blue-pill-content.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+.project-button {
+  background-color: hsl(0, 0%, 2%);
+  border: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-family: monospace;
+  padding: 15px 30px;
+  margin: 40px 0px 40px 290px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  visibility: visible !important;
+  opacity: 1;
+  box-shadow: 0 0 15px white;
+  ;
+}
+
+.project-button:hover {
+  background-color: #010e02;
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgb(8, 233, 8);
+}
+
+
+.project-button:active {
+  visibility: visible;
+  opacity: 1;
+  /* Maintain visibility during click */
+}
+
+
+.project-link {
+  display: inline-block;
+
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+
+  /* Adjust for tablets and smaller screens */
+  .navbar ul {
+    gap: 1rem;
+  }
+
+  .container,
+  .portfolio,
+  .biography {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .home h1 {
+    font-size: 2.5rem;
+  }
+
+  .home p {
+    font-size: 1.2rem;
+  }
+
+  /* General Biography Paragraph */
+  .biography p {
+    font-size: 1rem;
+    padding: 0.01rem;
+    text-align: center;
+    word-break: break-word;
+    white-space: normal;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+  }
+
+  /* Project Button */
+  .project-button {
+    font-size: 1rem;
+    padding: 12px 24px;
+    margin: 15px;
+    visibility: visible;
+    
+  }
+
+  /* Red and Blue Pill Content */
+  .red-pill-content,
+  .blue-pill-content {
+    padding: 1rem;
+  }
+
+  /* Media Queries */
+
+  @media (max-width: 768px) {
+
+    .navbar ul {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .home h1 {
+      font-size: 2rem;
+    }
+
+    .home p {
+      font-size: 0.8rem;
+      display: inline-block;
+      max-width: 90vw;
+      text-align: center;
+      white-space: nowrap;
+      word-wrap: break-word;
+      word-break: normal;
+      width: 0;
+      overflow: hidden;
+      height: 100px;
+    }
+
+    /* Biography Paragraph adjustments */
+    .biography p {
+      font-size: 1rem;
+      padding: 0.5rem;
+    
+    }
+
+    /* Container and Portfolio adjustments */
+    .container,
+    .portfolio,
+    .biography {
+      padding: 1rem;
+    }
+
+    /* Button Adjustments */
+    .pill-button,
+    .project-button {
+      font-size: 1rem;
+      padding: 12px 24px;
+    }
+
+    /* Red and Blue Pill Content adjustments */
+    .red-pill-content,
+    .blue-pill-content {
+      padding: 1rem;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  /* Further adjustments for mobile screens (max-width: 480px) */
+  @media (max-width: 480px) {
+
+    /* Home Section adjustments */
+    .home h1 {
+      font-size: 1.6rem;
+    }
+
+    .home p {
+      display: flex;
+      max-width: 100vw;
+      text-align: center;
+      white-space: normal;
+      word-wrap: break-word;
+      word-break: normal;
+      width: 0;
+      overflow: hidden;
+      height: 80px;
+      animation: typing 3s steps(30) 1s 1 normal both, blink-caret 0.75s step-end infinite;
+    }
+
+    /* Biography Paragraph adjustments */
+    .biography p {
+      font-size: 0.8rem;
+      padding: 0;
+      
+    }
+
+    /* Button Adjustments */
+    .pill-button,
+    .project-button {
+      font-size: 1rem;
+      padding: 12px 24px;
+      margin: 20px;
+    }
+
+    /* Red and Blue Pill Content adjustments */
+    .red-pill-content,
+    .blue-pill-content {
+      margin-left: 0;
+      margin-right: 0;
+      padding: 1rem;
+    }
+
+    /* Container and Portfolio adjustments */
+    .container,
+    .portfolio,
+    .biography {
+      padding: 0.1rem;
+  
+    }
+
+    /* Glitch Effect adjustment */
+    .glitch {
+      font-size: 1.2rem;
+    }
+  }
+}
